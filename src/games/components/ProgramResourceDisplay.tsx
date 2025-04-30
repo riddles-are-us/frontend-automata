@@ -4,10 +4,14 @@ import "./ProgramResourceDisplay.css";
 interface Props {
   iconImagePath: string;
   amount: number;
+  originalAmount?: number; // 原始资源数量（可选）
 }
 
-const ProgramResourceDisplay = ({ iconImagePath, amount }: Props) => {
+const ProgramResourceDisplay = ({ iconImagePath, amount, originalAmount }: Props) => {
   const getSign = (number: number) => (number > 0 ? "+" : "");
+
+  // 如果提供了原始数量且与调整后数量不同，则显示两个数量
+  const showBothAmounts = originalAmount !== undefined && originalAmount !== amount;
 
   return (
     <div className="program-resource-display-container">
@@ -20,7 +24,12 @@ const ProgramResourceDisplay = ({ iconImagePath, amount }: Props) => {
             ? "program-resource-display-positive-text"
             : "program-resource-display-negative-text"
         }
-      >{`${getSign(amount)}${amount.toString()}`}</p>
+      >
+        {showBothAmounts
+          ? `${getSign(originalAmount!)}${originalAmount} > ${getSign(amount)}${amount}`
+          : `${getSign(amount)}${amount.toString()}`
+        }
+      </p>
     </div>
   );
 };

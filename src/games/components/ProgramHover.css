@@ -1,7 +1,7 @@
 .program-hover-container {
     position: absolute;
-    width: 94px;
-    height: 70px;
+    width: 170px; /* 增加宽度以适应更宽的资源显示 */
+    height: 90px; /* 增加高度以适应程序运行时间显示 */
     transform: translate(-50%, -50%);
     z-index: 10;
 }
@@ -19,9 +19,26 @@
 .program-hover-resource-grid{
     position: absolute;
     transform: translate(-50%, -50%);
-    width: 88px;
+    width: 160px; /* 增加宽度以适应更宽的ProgramResourceDisplay */
     height: 64px;
-    top: 50%;
+    top: 55%; /* 调整位置以适应程序运行时间显示 */
     left: 50%;
     pointer-events: none;
+}
+
+.program-hover-time-text {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10px;
+    text-align: center;
+    line-height: 100%;
+    margin: 0px;
+    width: 80%;
+    height: 10px;
+    font-family: "mishmash";
+    color: white;
+    pointer-events: none;
+    user-select: none;
 }

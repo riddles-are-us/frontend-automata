@@ -3,7 +3,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 44px;
+    width: 44px; /* 增加宽度以容纳更多文本 */
     height: 16px;
 }
 
@@ -17,21 +17,22 @@
     user-select: none;
 }
 
-.program-resource-display-positive-text, 
-.program-resource-display-zero-text, 
+.program-resource-display-positive-text,
+.program-resource-display-zero-text,
 .program-resource-display-negative-text {
     position: absolute;
     top: 50%;
-    left: 28px;
+    left: 35px; /* 调整位置以适应更宽的容器 */
     transform: translate(-50%, -50%);
-    font-size: 10px;
+    font-size: 9px; /* 稍微减小字体大小以适应更多文本 */
     text-align: center;
     line-height: 10px;
     margin: 0px;
-    width: 28px;
+    width: 64px; /* 增加宽度以容纳更多文本 */
     height: 10px;
     font-family: "mishmash";
     user-select: none;
+    white-space: nowrap; /* 防止文本换行 */
 }
 
 .program-resource-display-positive-text {
