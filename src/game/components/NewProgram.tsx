@@ -6,7 +6,7 @@ import { useAppSelector } from "../../app/hooks";
 import { selectCurrentCost, selectLevel } from "../../data/properties";
 import { selectResource } from "../../data/resources";
 import { selectProgramCount } from "../../data/programs";
-import OrangeButton from "../script/button/OrangeButton";
+import NewProgramButton from "../script/button/NewProgramButton";
 
 interface Props {
   onSelect: () => void;
@@ -45,9 +45,7 @@ const NewProgram = ({ onSelect }: Props) => {
         Program
       </p>
       <div className="new-program-button">
-        <OrangeButton
-          id={fontSize}
-          text={""}
+        <NewProgramButton
           onClick={onSelect}
           isDisabled={
             titaniumCount < currentCost || programCount >= level * 4 + 4

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import background from "../../image/backgrounds/withdraw_frame.png";
 import amountBackground from "../../image/backgrounds/withdraw_amount_background.png";
-import OrangeButton from "../../script/button/OrangeButton";
 import {
   UIStateType,
   selectNonce,
@@ -24,6 +23,7 @@ import {
   selectIsLoading,
   setLoadingType,
 } from "../../../data/errors";
+import ConfirmButton from "../../script/button/ConfirmButton";
 
 interface Props {
   isWithdraw: boolean;
@@ -173,12 +173,7 @@ const WithdrawPopup = ({ isWithdraw }: Props) => {
           />
         </div>
         <div className="withdraw-popup-confirm-button">
-          <OrangeButton
-            text={"Confirm"}
-            onClick={onClickConfirm}
-            isDisabled={false}
-            fontSizeRatio={0.7}
-          />
+          <ConfirmButton onClick={onClickConfirm} isDisabled={false} />
         </div>
       </div>
     </div>

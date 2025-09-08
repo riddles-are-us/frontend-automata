@@ -3,7 +3,7 @@ import background from "../../image/backgrounds/withdraw_frame.png";
 import amountBackground from "../../image/backgrounds/withdraw_amount_background.png";
 import "./ListAmountPopup.css";
 import { ProgramModel } from "../../../data/models";
-import OrangeButton from "../../script/button/OrangeButton";
+import ConfirmButton from "../../script/button/ConfirmButton";
 
 interface Props {
   program: ProgramModel;
@@ -47,12 +47,7 @@ const ListAmountPopup = ({
           />
         </div>
         <div className="list-amount-popup-confirm-button">
-          <OrangeButton
-            text={"Confirm"}
-            onClick={onClickConfirm}
-            isDisabled={false}
-            fontSizeRatio={0.7}
-          />
+          <ConfirmButton onClick={onClickConfirm} isDisabled={false} />
         </div>
       </div>
     </div>

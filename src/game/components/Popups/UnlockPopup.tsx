@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import background from "../../image/backgrounds/withdraw_frame.png";
 import amountBackground from "../../image/backgrounds/withdraw_amount_background.png";
-import OrangeButton from "../../script/button/OrangeButton";
 import {
   UIState,
   UIStateType,
@@ -12,6 +11,7 @@ import { useAppDispatch, useAppSelector } from "../../../app/hooks";
 import "./UnlockPopup.css";
 import { getResourceIconPath, ResourceType } from "../../../data/models";
 import { selectResource } from "../../../data/resources";
+import ConfirmButton from "../../script/button/ConfirmButton";
 
 const UnlockPopup = () => {
   const dispatch = useAppDispatch();
@@ -47,11 +47,9 @@ const UnlockPopup = () => {
           />
         </div>
         <div className="unlock-popup-confirm-button">
-          <OrangeButton
-            text={"Confirm"}
+          <ConfirmButton
             onClick={onClickConfirm}
             isDisabled={titaniumCount < currentCost + 1000}
-            fontSizeRatio={0.7}
           />
         </div>
       </div>

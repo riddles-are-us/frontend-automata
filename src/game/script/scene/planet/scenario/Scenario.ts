@@ -32,33 +32,37 @@ export class Scenario {
   }
 
   updateCreatureAnimations(creatureTypes: number[], isCreating: boolean) {
+    const creatureTypesWithCreating = [...creatureTypes];
     if (isCreating) {
-      creatureTypes.push(creatureTypes.length);
+      creatureTypesWithCreating.push(creatureTypesWithCreating.length);
     }
 
-    let popCount = this.creatureAnimations.length - creatureTypes.length;
+    let popCount =
+      this.creatureAnimations.length - creatureTypesWithCreating.length;
     while (popCount-- > 0) {
       this.creatureAnimations.pop();
     }
 
     for (let i = 0; i < this.creatureAnimations.length; i++) {
-      if (this.creatureAnimations[i].creatureType != creatureTypes[i]) {
+      if (
+        this.creatureAnimations[i].creatureType != creatureTypesWithCreating[i]
+      ) {
         this.creatureAnimations[i].updateCreatureType(
-          creatureTypes[i],
-          isCreating && i == creatureTypes.length - 1
+          creatureTypesWithCreating[i],
+          isCreating && i == creatureTypesWithCreating.length - 1
         );
       }
     }
 
     for (
       let i = this.creatureAnimations.length;
-      i < creatureTypes.length;
+      i < creatureTypesWithCreating.length;
       i++
     ) {
       const creatureAnimation = new CreatureAnimation(
         i,
-        creatureTypes[i],
-        isCreating && i == creatureTypes.length - 1,
+        creatureTypesWithCreating[i],
+        isCreating && i == creatureTypesWithCreating.length - 1,
         this.ratio
       );
       this.creatureAnimations.push(creatureAnimation);

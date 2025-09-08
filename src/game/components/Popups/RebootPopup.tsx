@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import background from "../../image/backgrounds/withdraw_frame.png";
 import amountBackground from "../../image/backgrounds/withdraw_amount_background.png";
-import OrangeButton from "../../script/button/OrangeButton";
 import {
   UIState,
   UIStateType,
@@ -26,6 +25,7 @@ import {
   selectSelectedCreatureListIndex,
 } from "../../../data/creatures";
 import { setLoadingType, LoadingType, pushError } from "../../../data/errors";
+import ConfirmButton from "../../script/button/ConfirmButton";
 
 const RebootPopup = () => {
   const dispatch = useAppDispatch();
@@ -102,11 +102,9 @@ const RebootPopup = () => {
           />
         </div>
         <div className="reboot-popup-confirm-button">
-          <OrangeButton
-            text={"Confirm"}
+          <ConfirmButton
             onClick={onClickConfirm}
             isDisabled={titaniumCount < currentCost}
-            fontSizeRatio={0.7}
           />
         </div>
       </div>

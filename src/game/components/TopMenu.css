@@ -1,26 +1,48 @@
 .top-menu-container {
-  position: absolute;
+  height: 110px;
+  min-height: 110px;
   width: 100%;
-  height: 100%;
+  min-width: 960px;
   display: flex;
+  font-size: 24px;
+  z-index: 10;
 }
 
-.top-background {
-  width: 100%;
+.top-left,
+.top-right,
+.top-middle {
   height: 100%;
-  background-image: url("../image/backgrounds/top_bg.png");
-  background-repeat: no-repeat;
   background-size: contain;
   z-index: 7;
   pointer-events: none;
 }
 
+.top-left {
+  width: auto;
+  aspect-ratio: 480 / 110;
+  background-image: url("../image/backgrounds/top_left.png");
+  background-repeat: no-repeat;
+}
+
+.top-right {
+  width: auto;
+  aspect-ratio: 480 / 110;
+  background-image: url("../image/backgrounds/top_right.png");
+  background-repeat: no-repeat;
+}
+
+.top-middle {
+  flex-grow: 1;
+  background-image: url("../image/backgrounds/top_mid.png");
+  background-repeat: repeat-x;
+}
+
 .top-left-info-container {
   position: absolute;
+  width: 652px;
+  height: 110px;
   top: 0px;
   left: 0px;
-  height: 100%;
-  width: auto;
   display: flex;
   flex-direction: row;
   gap: 20px;
@@ -53,10 +75,10 @@
 
 .top-right-info-container {
   position: absolute;
+  width: 462px;
+  height: 110px;
   top: 0px;
   right: 0px;
-  height: 100%;
-  width: auto;
   display: flex;
   flex-direction: row;
   gap: 20px;
@@ -88,55 +110,45 @@
 
 .top-resources {
   position: absolute;
-  width: 45%;
-  height: auto;
-  aspect-ratio: 432 / 25;
-  top: 63%;
-  left: 47.5%;
-  transform: translate(-50%, -50%);
+  top: 50px;
+  left: 260px;
+  width: 480px;
+  height: 40px;
   z-index: 7;
 }
 
 .top-help {
   position: absolute;
-  width: auto;
-  height: 15%;
-  aspect-ratio: 58 / 20;
-  top: 63%;
-  left: 73%;
-  transform: translate(-50%, -50%);
+  width: 58px;
+  height: 20px;
+  top: 60px;
+  right: 240px;
   z-index: 7;
 }
 
 .top-planet {
   position: absolute;
-  width: auto;
-  height: 33%;
-  aspect-ratio: 62 / 37;
-  top: 69%;
-  left: 85.3%;
-  transform: translate(-50%, -50%);
+  width: 62px;
+  height: 37px;
+  top: 60px;
+  right: 109px;
   z-index: 6;
 }
 
 .top-market {
   position: absolute;
-  width: auto;
-  height: 33%;
-  aspect-ratio: 57 / 37;
-  top: 69%;
-  left: 91.3%;
-  transform: translate(-50%, -50%);
+  width: 57px;
+  height: 37px;
+  top: 60px;
+  right: 55px;
   z-index: 6;
 }
 
 .top-redeem {
   position: absolute;
-  width: auto;
-  height: 33%;
-  aspect-ratio: 62 / 37;
-  top: 69%;
-  left: 97.3%;
-  transform: translate(-50%, -50%);
+  width: 62px;
+  height: 37px;
+  top: 60px;
+  right: -3px;
   z-index: 6;
 }

@@ -159,11 +159,13 @@ export const creaturesSlice = createSlice({
         return;
       }
 
-      state.selectedCreatureIndex =
-        (state.selectedCreatureIndex +
-          action.payload.diff +
-          state.creatures.length) %
-        state.creatures.length;
+      if (state.creatures.length > 0) {
+        state.selectedCreatureIndex =
+          (state.selectedCreatureIndex +
+            action.payload.diff +
+            state.creatures.length) %
+          state.creatures.length;
+      }
     },
     setSelectedCreature: (state, action) => {
       state.selectedCreatureIndex =
@@ -290,7 +292,7 @@ export function adjustResourceByProductivity(
   if (resource.amount > 0 && productivityValue > 0) {
     return {
       type: resource.type,
-      amount: Math.floor(resource.amount + Math.log2(productivityValue)),
+      amount: Math.floor(resource.amount + Math.log2(productivityValue + 1)),
     };
   }
 

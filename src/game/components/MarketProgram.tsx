@@ -9,7 +9,9 @@ import {
 } from "../../data/models";
 import { formatTime } from "../../data/creatures";
 import background from "../image/backgrounds/market_card_frame.png";
-import OrangeButton from "../script/button/OrangeButton";
+import MarketProgramBidButton from "../script/button/MarketProgramBidButton";
+import MarketProgramSellButton from "../script/button/MarketProgramSellButton";
+import MarketProgramListButton from "../script/button/MarketProgramListButton";
 
 interface Props {
   program: ProgramModel;
@@ -132,32 +134,17 @@ const MarketProgram = ({
       )}
       {onClickBid && (
         <div className="market-program-button">
-          <OrangeButton
-            text={"Bid"}
-            onClick={onClickBid}
-            isDisabled={false}
-            fontSizeRatio={1}
-          />
+          <MarketProgramBidButton onClick={onClickBid} isDisabled={false} />
         </div>
       )}
       {onClickSell && (
         <div className="market-program-button">
-          <OrangeButton
-            text={"Sell"}
-            onClick={onClickSell}
-            isDisabled={false}
-            fontSizeRatio={1}
-          />
+          <MarketProgramSellButton onClick={onClickSell} isDisabled={false} />
         </div>
       )}
       {!isInstalled && onClickList && (
         <div className="market-program-button">
-          <OrangeButton
-            text={"List"}
-            onClick={onClickList}
-            isDisabled={false}
-            fontSizeRatio={0.8}
-          />
+          <MarketProgramListButton onClick={onClickList} isDisabled={false} />
         </div>
       )}
     </div>

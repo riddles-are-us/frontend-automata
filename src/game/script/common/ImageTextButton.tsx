@@ -39,7 +39,12 @@ const ImageTextButton = ({
     return () => {
       window.removeEventListener("resize", adjustSize);
     };
-  }, [containerRef.current, id]);
+  }, [
+    containerRef.current,
+    containerRef.current?.offsetHeight,
+    containerRef.current?.offsetWidth,
+    id,
+  ]);
 
   const getElement = (image: string) => {
     return (

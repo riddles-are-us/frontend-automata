@@ -34,12 +34,8 @@ const ProgramResourceDisplay = ({
   const showBothAmounts =
     originalAmount !== undefined && originalAmount !== amount;
 
-  const containerClassName = `program-resource-display-container${
-    showBothAmounts ? " dual-values" : ""
-  }`;
-
   return (
-    <div className={containerClassName} ref={containerRef}>
+    <div className="program-resource-display-container" ref={containerRef}>
       <img src={iconImagePath} className="program-resource-display-image" />
       <p
         className={

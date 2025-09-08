@@ -41,6 +41,16 @@
   aspect-ratio: 132/45;
 }
 
+.market-scene-reload-button {
+  position: relative;
+  width: auto;
+  height: 5%;
+  aspect-ratio: 132/45;
+  left: 90%;
+  top: 2.5%;
+  transform: translate(-50%, 0);
+}
+
 .market-scene-page-selector-container {
   position: absolute;
   width: auto;

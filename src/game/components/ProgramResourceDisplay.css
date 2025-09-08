@@ -18,11 +18,6 @@
   user-select: none;
 }
 
-.program-resource-display-container.dual-values
-  .program-resource-display-image {
-  left: 0.05%;
-}
-
 .program-resource-display-positive-text,
 .program-resource-display-zero-text,
 .program-resource-display-negative-text {
@@ -36,16 +31,6 @@
   font-family: "mishmash";
   user-select: none;
   white-space: nowrap;
-}
-
-.program-resource-display-container.dual-values
-  .program-resource-display-positive-text,
-.program-resource-display-container.dual-values
-  .program-resource-display-zero-text,
-.program-resource-display-container.dual-values
-  .program-resource-display-negative-text {
-  left: 60%;
-  width: 91%;
 }
 
 .program-resource-display-positive-text {

@@ -14,7 +14,7 @@ import { selectResource } from "../../../data/resources";
 import { getNewProgramTransactionCommandArray } from "../../rpc";
 import { useWalletContext, sendTransaction } from "zkwasm-minirollup-browser";
 import { setLoadingType, LoadingType, pushError } from "../../../data/errors";
-import OrangeButton from "../../script/button/OrangeButton";
+import ConfirmButton from "../../script/button/ConfirmButton";
 
 const NewProgramPopup = () => {
   const dispatch = useAppDispatch();
@@ -78,11 +78,9 @@ const NewProgramPopup = () => {
           />
         </div>
         <div className="new-program-popup-confirm-button">
-          <OrangeButton
-            text={"Confirm"}
+          <ConfirmButton
             onClick={onClickConfirm}
             isDisabled={titaniumCount < currentCost}
-            fontSizeRatio={0.7}
           />
         </div>
       </div>

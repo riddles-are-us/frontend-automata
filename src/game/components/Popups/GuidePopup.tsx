@@ -18,7 +18,7 @@ import {
 } from "../../../data/guides";
 import { useAppDispatch, useAppSelector } from "../../../app/hooks";
 import "./GuidePopup.css";
-import BlueButton from "../../script/button/BlueButton";
+import GuidePlayButton from "../../script/button/GuidePlayButton";
 
 const GuidePopup = () => {
   const dispatch = useAppDispatch();
@@ -69,11 +69,7 @@ const GuidePopup = () => {
         )}
         {enableSkipButton && (
           <div className="guide-popup-end-guide-button">
-            <BlueButton
-              text={"Play"}
-              onClick={onClickEndGuide}
-              isDisabled={false}
-            />
+            <GuidePlayButton onClick={onClickEndGuide} isDisabled={false} />
           </div>
         )}
       </div>

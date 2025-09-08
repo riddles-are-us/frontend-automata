@@ -1,6 +1,5 @@
 import background from "../../image/backgrounds/withdraw_frame.png";
 import amountBackground from "../../image/backgrounds/withdraw_amount_background.png";
-import OrangeButton from "../../script/button/OrangeButton";
 import {
   UIState,
   UIStateType,
@@ -27,6 +26,7 @@ import { getCollectEnergyTransactionCommandArray } from "../../rpc";
 import GainEnergy from "../GainEnergy";
 import { useEffect, useRef, useState } from "react";
 import { setLoadingType, LoadingType, pushError } from "../../../data/errors";
+import ConfirmButton from "../../script/button/ConfirmButton";
 
 interface GainEnergyProps {
   startPosition: { x: number; y: number };
@@ -188,11 +188,9 @@ const RocketPopup = () => {
           />
         </div>
         <div className="rocket-popup-confirm-button">
-          <OrangeButton
-            text={"Confirm"}
+          <ConfirmButton
             onClick={onClickConfirm}
             isDisabled={titaniumCount < redeemEnergyTitaniumCost}
-            fontSizeRatio={0.7}
           />
         </div>
       </div>
