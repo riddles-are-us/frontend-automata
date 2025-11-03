@@ -53,6 +53,7 @@ export function FrontPageController({
   const [queryingL2Login, setQueryingL2Login] = useState(false);
   const [isServerNoResponse, setIsServerNoResponse] = useState(false);
   const [autoLogin, setAutoLogin] = useState(false);
+  const [tryLogin, setTryLogin] = useState(false);
   // RainbowKit connect modal hook
   const { connectModalOpen, openConnectModal } = useConnectModal();
 
@@ -137,6 +138,7 @@ export function FrontPageController({
       return;
     }
 
+    setTryLogin(true);
     dispatch(queryState(l2Account!.getPrivateKey())).then(async (action) => {
       if (queryState.fulfilled.match(action)) {
         onStartGameplay();
@@ -171,6 +173,7 @@ export function FrontPageController({
         });
       }
     });
+    setTryLogin(false);
   }, [l2Account]);
 
   if (isServerNoResponse) {
@@ -182,7 +185,16 @@ export function FrontPageController({
   } else if (connectState == ConnectState.Preloading) {
     return <LoadingPage message={"Preloading Textures"} progress={progress} />;
   } else if (connectState == ConnectState.ConnectionError) {
-    return <LoadingPage message={"Creating Player"} progress={0} />;
+    if (tryLogin) {
+      return <LoadingPage message={"Creating Player"} progress={0} />;
+    } else {
+      return (
+        <LoadingPage
+          message={"Connection Error. Please try refreshing."}
+          progress={0}
+        />
+      );
+    }
   } else if (
     connectState == ConnectState.Idle ||
     connectState == ConnectState.QueryConfig ||
